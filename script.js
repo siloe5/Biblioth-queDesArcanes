@@ -1,6 +1,4 @@
-// ============================================================================
-// 1. BASE DE DONNÉES DES CARTES
-// ============================================================================
+// base de donnée cartes
 const CARDS_DATABASE = {
   // Fam1
   "f1_1": {
@@ -105,9 +103,7 @@ const CARDS_DATABASE = {
   }
 };
 
-// ============================================================================
-// 2. BDD DES LIVRES
-// ============================================================================
+// base de donnée livre
 const BOOKS_DATABASE = {
   "f1_1-f2_2-f3_3": {
     title: "La prochaine fois que tu mordras la poussière",
@@ -301,9 +297,7 @@ const BOOKS_DATABASE = {
   ]
 };
 
-// ============================================================================
-// ALTERNATIVES SIMILAIRES SI AUCUNE COMBINAISON EXACTE N'EXISTE
-// ============================================================================
+// alternatives 
 const FALLBACK_ALTERNATIVES = {
   "f1_1": [
     {
