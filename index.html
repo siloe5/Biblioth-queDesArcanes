@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Bibliothèque des Arcanes</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,400&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- tiraaaaaages -->
+  <main id="board-screen" class="screen active">
+    <header class="app-header">
+      <h1>
+        <span class="title-left">Bibliothèque</span>
+        <span class="title-right">des Arcanes</span>
+      </h1>
+      <p class="subtitle">
+        Consultez les oracles :<br>
+        Tirez 1 carte par famille afin d'en découvrir l'ouvrage lié.
+      </p>
+    </header>
+
+    <!-- emplacements -->
+    <section class="slots-container" aria-label="Emplacements des cartes tirées">
+      <div class="card-slot" data-family="1" id="slot-1">
+        <span class="slot-placeholder">?</span>
+        <span class="slot-family-label">Le ton</span>
+      </div>
+      <div class="card-slot" data-family="2" id="slot-2">
+        <span class="slot-placeholder">?</span>
+        <span class="slot-family-label">Le genre</span>
+      </div>
+      <div class="card-slot" data-family="3" id="slot-3">
+        <span class="slot-placeholder">?</span>
+        <span class="slot-family-label">La forme</span>
+      </div>
+    </section>
+
+    <div class="actions-area">
+      <button id="reveal-oracle-btn" class="primary-btn" disabled>
+        Découvrir l'ouvrage
+      </button>
+      <button id="tuto" class="tuto-btn">
+        Fonctionnement
+      </button>
+      <button id="reset-btn" class="ghost-btn hidden">
+        Nouvel oracle?
+      </button>
+    </div>
+  </main>
+
+  <!-- résult -->
+  <section id="card-reveal-screen" class="screen overlay-screen" aria-hidden="true">
+    <div class="reveal-content">
+      <div class="tarot-card-large" id="reveal-card-visual">
+        <!-- L'image ou le visuel de la carte sera injecté ici par JS -->
+      </div>
+      <p class="card-meaning" id="reveal-card-meaning">
+        Signification de la carte...
+      </p>
+      <button id="continue-btn" class="continue-trigger">
+        Continuer le tirage
+      </button>
+    </div>
+  </section>
+
+  <!-- livre -->
+  <section id="book-result-screen" class="screen overlay-screen" aria-hidden="true">
+    <div class="book-card-container">
+      <span class="oracle-tag">Votre ouvrage destiné</span>
+      <h2 id="book-title">Titre du Livre</h2>
+      <p class="book-author" id="book-author">Auteur·ice</p>
+      <div class="book-divider"></div>
+      <p class="book-description" id="book-description">
+        Résumé et lien avec votre tirage...
+      </p>
+      <div class="drawn-summary" id="drawn-summary">
+        <!-- Rappel des 3 cartes tirées -->
+      </div>
+      <button id="close-book-btn" class="primary-btn">
+        Recommencer un tirage
+      </button>
+    </div>
+  </section>
+
+  <!-- ÉCRAN TUTORIEL tuto -->
+<section id="tuto-screen" class="screen overlay-screen" aria-hidden="true">
+  <div class="book-card-container">
+    <span class="oracle-tag">Fonctionnement</span>
+    <h2>Comment consulter l'Oracle ?</h2>
+    <div class="book-divider"></div>
+    <p class="book-description" style="text-align: left;">
+      <strong>1. Piochez 3 cartes :</strong> choisissez une carte dans chacune des trois familles physiques (<em>Le Ton, Le Genre, La Forme</em>).<br><br>
+      <strong>2. Scannez-les :</strong> approchez chaque carte du haut de votre téléphone pour révéler sa signification.<br><br>
+      <strong>3. Découvrez votre livre :</strong> une fois les 3 emplacements remplis, cliquez sur <em>« Découvrir l'oracle »</em> pour obtenir l'ouvrage qui correspond à votre tirage.
+    </p>
+    <button id="close-tuto-btn" class="primary-btn">
+      Commencer le tirage
+    </button>
+  </div>
+</section>
+
+  <!-- sinon) -->
+  <aside class="nfc-simulator">
+    <button id="toggle-sim-btn" class="sim-toggle">Si vous n'avez pas les cartes</button>
+    <div id="sim-panel" class="sim-panel hidden">
+      <p class="sim-info">Cliquez sur une carte pour simuler son scan NFC :</p>
+      <div id="sim-buttons-grid" class="sim-grid"></div>
+    </div>
+  </aside>
+
+  <script src="script.js"></script>
+</body>
+</html>
