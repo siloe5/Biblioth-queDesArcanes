@@ -381,7 +381,8 @@ h1 {
   font-size: 0.8rem;
   padding: 0.25rem 0.7rem;
   border-radius: 99px;
-  background: rgba(110, 22, 22, 0.1);
+  border: 1px;
+  border-style: solid;
 }
 
 /* Barre de simulation NFC en bas */
