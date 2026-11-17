@@ -319,10 +319,10 @@ const FALLBACK_ALTERNATIVES = {
   ],
   "f1_2": [
     {
-      title: "Œuvres choisies",
-      author: "Bande dessinée & Récits graphiques",
-      description: "Une échappée visuelle et lumineuse, idéale pour les esprits en quête d'exploration graphique et de liberté de ton."
-    }
+      title: "Max doit faire des efforts",
+      author: "Dominique DE SAINT MARS & Serge BLOCH",
+      description: "Max se surpasse pour faire de la planche à voile. Il décide d'appliquer la même méthode à l'école... Avec ses copains, il crée un club d'entraide. Mais il en fait trop, il se prive de tout ! Va-t-il tenir le coup ? Ou craquer ?"
+    },
   ],
   "f1_3": [
     {
@@ -471,7 +471,7 @@ document.getElementById("reveal-oracle-btn").addEventListener("click", () => {
   } else {
     // 2. Sinon, on bascule sur les alternatives basées sur la première carte (Famille 1)
     isExactMatch = false;
-    const firstCardId = currentDraw[1]; 
+    const firstCardId = currentDraw[1];
     booksList = FALLBACK_ALTERNATIVES[firstCardId] || [DEFAULT_BOOK];
   }
 
