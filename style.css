@@ -196,36 +196,43 @@ h1 {
 }
 
 .tuto-btn {
-  background-color:#AD2E2E;
+background-color: transparent;
+  background-image: url('/images/Bouton1.png'); /* Vérifie l'extension (.png, .jpg, etc.) */
+  background-size: cover; /* Ou '100% 100%' si l'image doit s'étirer exactement aux dimensions du bouton */
+  background-position: center;
+  background-repeat: no-repeat;
   color: var(--btn-text);
   font-size: 1.15rem;
   font-weight: 600;
-  padding: 0.85rem 2.4rem;
+  padding: 0.95rem 2.6rem;
   border: none;
-  border-radius: 999px;
+  border-radius: 0; /* Enlève l'arrondi pilule si l'image a déjà sa propre forme */
   cursor: pointer;
-  box-shadow: 0 6px 18px rgba(110, 22, 22, 0.22);
-  opacity: 100%;
+  box-shadow: none;
+  transition: transform 0.2s ease, opacity 0.2s ease;
 }
 
 
 .primary-btn {
-  background-color: var(--btn-bg);
+background-color: transparent;
+  background-image: url('/images/Bouton2.png'); /* Vérifie l'extension (.png, .jpg, etc.) */
+  background-size: cover; /* Ou '100% 100%' si l'image doit s'étirer exactement aux dimensions du bouton */
+  background-position: center;
+  background-repeat: no-repeat;
   color: var(--btn-text);
   font-size: 1.15rem;
   font-weight: 600;
-  padding: 0.85rem 2.4rem;
+  padding: 0.95rem 2.6rem;
   border: none;
-  border-radius: 999px;
+  border-radius: 0; /* Enlève l'arrondi pilule si l'image a déjà sa propre forme */
   cursor: pointer;
-  box-shadow: 0 6px 18px rgba(110, 22, 22, 0.22);
+  box-shadow: none;
   transition: transform 0.2s ease, opacity 0.2s ease;
 }
 
 .primary-btn:disabled {
   opacity: 0.38;
   cursor: not-allowed;
-  box-shadow: none;
 }
 
 .primary-btn:not(:disabled):active {
