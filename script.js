@@ -297,7 +297,7 @@ const BOOKS_DATABASE = {
   ]
 };
 
-// alternatives 
+// alternatives
 const FALLBACK_ALTERNATIVES = {
   "f1_1": [
     {
@@ -316,7 +316,7 @@ const FALLBACK_ALTERNATIVES = {
       title: "Max doit faire des efforts",
       author: "Dominique DE SAINT MARS & Serge BLOCH",
       description: "Max se surpasse pour faire de la planche à voile. Il décide d'appliquer la même méthode à l'école... Avec ses copains, il crée un club d'entraide. Mais il en fait trop, il se prive de tout ! Va-t-il tenir le coup ? Ou craquer ?"
-    },
+    }
   ],
   "f1_3": [
     {
@@ -392,6 +392,7 @@ function renderBoard() {
 
   [1, 2, 3].forEach((familyNum) => {
     const slotEl = document.getElementById(`slot-${familyNum}`);
+    slotEl.dataset.family = familyNum;
     const cardId = currentDraw[familyNum];
 
     if (cardId && CARDS_DATABASE[cardId]) {
@@ -428,6 +429,8 @@ function openCardReveal(card) {
   const visualContainer = document.getElementById("reveal-card-visual");
   const meaningEl = document.getElementById("reveal-card-meaning");
 
+  visualContainer.dataset.family = card.family;
+
   if (card.image) {
     visualContainer.innerHTML = `<img src="${card.image}" alt="${card.name}">`;
   } else {
@@ -460,7 +463,7 @@ document.getElementById("reveal-oracle-btn").addEventListener("click", () => {
 
   // 1. Vérifie si la combinaison exacte existe dans la BDD
   if (BOOKS_DATABASE[comboKey]) {
-    let rawResult = BOOKS_DATABASE[comboKey];
+    const rawResult = BOOKS_DATABASE[comboKey];
     booksList = Array.isArray(rawResult) ? rawResult : [rawResult];
   } else {
     // 2. Sinon, on bascule sur les alternatives basées sur la première carte (Famille 1)
@@ -490,7 +493,7 @@ document.getElementById("reveal-oracle-btn").addEventListener("click", () => {
       booksHTML += `<p class="book-index" style="font-size: 0.85rem; opacity: 0.7; margin-top: 1rem;">Ouvrage ${index + 1} sur ${booksList.length}</p>`;
     }
     booksHTML += `
-      <h2 class="book-title" style="margin-top: ${index > 0 ? '2rem' : '0.5rem'};">${book.title}</h2>
+      <h2 class="book-title" style="margin-top: ${index > 0 ? "2rem" : "0.5rem"};">${book.title}</h2>
       <p class="book-author">${book.author}</p>
       <div class="book-divider"></div>
       <p class="book-description">${book.description}</p>
